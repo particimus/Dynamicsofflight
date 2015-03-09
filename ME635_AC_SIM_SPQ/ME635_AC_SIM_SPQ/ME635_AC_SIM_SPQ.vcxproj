@@ -80,11 +80,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aircraft.h" />
+    <ClInclude Include="controller.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="aircraft.cpp" />
+    <ClCompile Include="controller.cpp" />
     <ClCompile Include="ME635_AC_SIM_SPQ.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -42,6 +42,13 @@ private:
 	enum{ aa, ee, rr, tt };
 	/*enum{ w_ns, w_es, w_ds, u_wg, v_wg, w_wg };*/
 	double x[N], xdot[N], y[N], K[4][N], G[9], d[4], wn[6], uc[4];
+	double Lap, Lai, La_ui_max, La_uc_max, La_uc_min, La_trim; 
+	double Gtp, Gti, Gtd, Gt_ui_max, Gt_uc_max, Gt_uc_min, Gt_trim;
+	double Rop, Roi, Ror, Ro_ui_max, Ro_uc_max, Ro_uc_min, Ro_trim;
+	double Lop, Lod, Lo_ui_max, Lo_uc_max, Lo_uc_min, Lo_trim;
+	double Vep, Vei, Ved, Ve_ui_max, Ve_uc_max, Ve_uc_min, Ve_trim;
+	double Pip, Pii, Pir, Pi_ui_max, Pi_uc_max, Pi_uc_min, Pi_trim;
+	double Enp, Eni, End, En_ui_max, En_uc_max, En_uc_min, En_trim;
 	double Sphi, Cphi, Sth, Cth, Tth, Spsi, Cpsi;
 	double Fx, Fy, Fz, Mx, My, Mz, Flift, Fdrag, Fprop;
 	double mass, rho;
@@ -50,19 +57,23 @@ private:
 	double CDde, Cmde, Cprop, CY0, Cl0, Cn0, CYb, Clb, Cnb, CYp, Clp, Cnp;
 	double CYr, Clr, Cnr, CYda, Clda, Cnda, CYdr, Cldr, Cndr;
 	double Cx, Cxq, Cxde, Cz, Czq, Czde;
-	double Va, AP, Beta, CAP, SAP;
+	double Va, V_a, AP, Beta, CAP, SAP;
 	double amax, amin, emax, emin, rmax, rmin, tmax, tmin;
 	double Wna, Wne, Wnr, Wnt;
+	double Vc, Pnc, Pec, Altc, Rollc, Pitchc, roll_ratec, pitch_ratec, Lac, Loc, Gtc, Energyc;
+	double Alt, GT;
+	double Energy;
 	//  other parameters as needed
 public:
 	aircraft();   // constructor
 	~aircraft();   // destructor 
 	double rk(double);
 	void  function(int);
-	void control(double t);
 	void  force(void);
 	void  moment(void);
 	void  init_state(void);
+	void nav_temp(double t);
+	void control(double t);
 	double  get_state(int);
 	// other functions as needed
 };

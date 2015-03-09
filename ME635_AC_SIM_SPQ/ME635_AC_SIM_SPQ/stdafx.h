@@ -12,10 +12,11 @@
 
 #include <stdio.h>
 #include <tchar.h>
-#include <math.h>
+#include <cmath>
 #include <iostream>
 #include <fstream>
 #include "aircraft.h"
+//#include "controller.h"
 
 using namespace std;
 
